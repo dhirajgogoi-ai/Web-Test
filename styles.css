@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.7;
+    transition: background-image 0.5s ease;
+}
+
+.season-indicator {
+    text-align: center;
+    color: white;
+    z-index: 10;
+    animation: fadeIn 1s ease;
+}
+
+.season-indicator h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.season-indicator p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.season-emoji {
+    font-size: 10rem;
+    position: absolute;
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Season-specific Styles */
+/* Spring */
+body.spring {
+    background-color: #f0f8ff;
+    color: #2c5f4f;
+}
+
+body.spring .hero-section::before {
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23ffb6d9" width="1200" height="600"/><circle cx="100" cy="100" r="80" fill="%23ff69b4" opacity="0.3"/><circle cx="1100" cy="500" r="120" fill="%23ff69b4" opacity="0.2"/></svg>');
+}
+
+body.spring .nav-links a:hover {
+    color: #ff69b4;
+}
+
+body.spring .btn-submit {
+    background-color: #2ecc71;
+}
+
+/* Summer */
+body.summer {
+    background-color: #fff8e7;
+    color: #1a3a3a;
+}
+
+body.summer .hero-section::before {
+    background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23ffd89b" width="1200" height="600"/><circle cx="600" cy="300" r="100" fill="%23ffeb3b" opacity="0.4"/></svg>');
+}
+
+body.summer .nav-links a:hover {
+    color: #ff6b6b;
+}
+
+body.summer .btn-submit {
+    background-color: #ff6b6b;
+}
+
+/* Fall */
+body.fall {
+    background-color: #fff5e6;
+    color: #5d3a1a;
+}
+
+body.fall .hero-section::before {
+    background-image: linear-gradient(135deg, #f39c12 0%, #d35400 100%),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d2691e" width="1200" height="600"/><circle cx="200" cy="200" r="60" fill="%23ff8c00" opacity="0.3"/><circle cx="1000" cy="400" r="80" fill="%23ff6347" opacity="0.3"/></svg>');
+}
+
+body.fall .nav-links a:hover {
+    color: #ff8c00;
+}
+
+body.fall .btn-submit {
+    background-color: #ff8c00;
+}
+
+/* Winter */
+body.winter {
+    background-color: #e6f3ff;
+    color: #1a3a5c;
+}
+
+body.winter .hero-section::before {
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%),
+                      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23b0e0e6" width="1200" height="600"/><circle cx="300" cy="150" r="70" fill="%2387ceeb" opacity="0.2"/><circle cx="900" cy="450" r="90" fill="%2387ceeb" opacity="0.2"/></svg>');
+}
+
+body.winter .nav-links a:hover {
+    color: #4a90e2;
+}
+
+body.winter .btn-submit {
+    background-color: #4a90e2;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.about-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.season-card {
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    background: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.season-card.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.season-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.season-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.season-card p {
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.season-card.active p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.season-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.season-card li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.season-card.active li {
+    color: white;
+}
+
+/* Activities Section */
+.activities-section {
+    padding: 4rem 0;
+    background: #f5f5f5;
+}
+
+.activities-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.activity-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card-header {
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.activity-card-content {
+    padding: 0 2rem 2rem;
+}
+
+.activity-card h3 {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+}
+
+.activity-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.booking-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#bookingMessage {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.booking-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.booking-form input {
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.booking-form input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.btn-submit {
+    grid-column: 1 / -1;
+    padding: 0.8rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .season-indicator h1 {
+        font-size: 2.5rem;
+    }
+
+    .season-indicator p {
+        font-size: 1.1rem;
+    }
+
+    .season-emoji {
+        font-size: 6rem;
+    }
+
+    .about-section h2,
+    .activities-section h2,
+    .booking-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .season-grid,
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+}

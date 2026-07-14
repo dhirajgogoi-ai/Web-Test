@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise Resort - Experience Every Season</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🏖️ Paradise Resort</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section">
+        <div class="season-indicator" id="seasonIndicator">
+            <h1 id="seasonTitle">Welcome to Paradise Resort</h1>
+            <p id="seasonSubtitle">Experience the beauty of each season</p>
+        </div>
+        <div class="season-emoji" id="seasonEmoji">🌞</div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Paradise Resort</h2>
+            <p id="seasonDescription">
+                Discover the magic of our resort throughout the year. Each season brings unique experiences, 
+                stunning landscapes, and unforgettable memories.
+            </p>
+            <div class="season-grid">
+                <div class="season-card" id="springCard">
+                    <div class="season-icon">🌸</div>
+                    <h3>Spring</h3>
+                    <p>March - May</p>
+                    <ul>
+                        <li>Blooming gardens</li>
+                        <li>Bird watching tours</li>
+                        <li>Mild weather</li>
+                    </ul>
+                </div>
+                <div class="season-card" id="summerCard">
+                    <div class="season-icon">☀️</div>
+                    <h3>Summer</h3>
+                    <p>June - August</p>
+                    <ul>
+                        <li>Beach activities</li>
+                        <li>Water sports</li>
+                        <li>Outdoor concerts</li>
+                    </ul>
+                </div>
+                <div class="season-card" id="fallCard">
+                    <div class="season-icon">🍂</div>
+                    <h3>Fall</h3>
+                    <p>September - November</p>
+                    <ul>
+                        <li>Golden landscapes</li>
+                        <li>Hiking trails</li>
+                        <li>Harvest festivals</li>
+                    </ul>
+                </div>
+                <div class="season-card" id="winterCard">
+                    <div class="season-icon">❄️</div>
+                    <h3>Winter</h3>
+                    <p>December - February</p>
+                    <ul>
+                        <li>Cozy retreats</li>
+                        <li>Spa services</li>
+                        <li>Holiday events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="activities-section">
+        <div class="container">
+            <h2>Featured Activities</h2>
+            <div class="activities-grid" id="activitiesGrid">
+                <!-- Dynamically populated based on season -->
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+        <div class="container">
+            <h2>Book Your Stay</h2>
+            <p id="bookingMessage">Special offers available this season!</p>
+            <form class="booking-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="date" required>
+                <input type="number" placeholder="Number of Guests" min="1" max="10" required>
+                <button type="submit" class="btn-submit">Reserve Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Paradise Resort. All rights reserved.</p>
+            <p id="seasonFooter">Current Season: </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
